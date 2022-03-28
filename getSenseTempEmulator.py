@@ -1,4 +1,5 @@
 #Use the builtin emulator
+#See: https://sense-emu.readthedocs.io/en/v1.1/
 
 from sense_emu import SenseHat
 from time import sleep

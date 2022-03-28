@@ -1,0 +1,3 @@
+[submodule "astropi"]
+	path = astropi
+	url = https://github.com/MrDMurray/astropi
