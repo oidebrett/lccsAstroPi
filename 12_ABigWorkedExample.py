@@ -73,7 +73,7 @@ counter = 1
 start_time = datetime.now()
 now_time = datetime.now()
 # Run a loop for (almost) three hours
-while (now_time < start_time + timedelta(minutes=178)):
+while (now_time < start_time + timedelta(minutes=0.2)):
     try:
         humidity = round(sense.humidity, 4)
         temperature = round(sense.temperature, 4)
