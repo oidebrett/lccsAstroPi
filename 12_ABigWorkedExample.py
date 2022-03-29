@@ -11,7 +11,7 @@ def create_csv_file(data_file):
     """Create a new CSV file and add the header row"""
     with open(data_file, 'w') as f:
         writer = csv.writer(f)
-        header = ("Counter", "Date/time", "Latitude", "Longitude", "Temperature", "Humidity")
+        header = ("Counter", "Date/time", "Latitude", "Longitude", "Temperature", "Humidity", "Pressure")
         writer.writerow(header)
 
 def add_csv_data(data_file, data):
@@ -74,10 +74,10 @@ start_time = datetime.now()
 now_time = datetime.now()
 # Run a loop for (almost) three hours
 while (now_time < start_time + timedelta(minutes=0.2)):
-    print("Here now")
     try:
         humidity = round(sense.humidity, 4)
         temperature = round(sense.temperature, 4)
+        pressure = round(sense.pressure, 4)
         # Get coordinates of location on Earth below the ISS
         location = ISS.coordinates()
         # Save the data to the file
@@ -88,6 +88,7 @@ while (now_time < start_time + timedelta(minutes=0.2)):
             location.longitude.degrees,
             temperature,
             humidity,
+            pressure
         )
         add_csv_data(data_file, data)
         # Capture image
